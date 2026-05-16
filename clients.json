@@ -1,3 +1,11 @@
 {
-  "clients": []
+  "clients": [
+    {
+      "accountId": "diegocaso123",
+      "locationId": "sin-location",
+      "theme": 6,
+      "themeName": "Dark Night",
+      "timestamp": "2026-05-16T09:57:45.470Z"
+    }
+  ]
 }
