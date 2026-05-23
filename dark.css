@@ -367,7 +367,7 @@ select.removeShadow,
 
 #backButtonv2 i, 
 #backButtonv2 span {
-  color: rgba(243, 238, 246, 0.5) !important;
+  color: rgba(243, 238, 246, 0.85) !important;
   transition: color 0.25s ease !important;
 }
 
@@ -377,7 +377,7 @@ select.removeShadow,
 }
 
 #sidebar-v2 .menu-title {
-  color: rgba(243, 238, 246, 0.4) !important;
+  color: rgba(243, 238, 246, 0.6) !important;
   font-weight: 700 !important;
   font-size: 11px !important;
   letter-spacing: 0.08em !important;
@@ -412,9 +412,10 @@ select.removeShadow,
   border-left: 3px solid transparent !important;
 }
 
+/* CORREGIDO: textos sidebar en blanco visible */
 #sidebar-v2 nav a span,
 #sidebar-v2 nav a i {
-  color: rgba(243, 238, 246, 0.45) !important;
+  color: rgba(243, 238, 246, 0.85) !important;
   transition: color 0.2s ease, transform 0.2s ease !important;
 }
 
@@ -425,7 +426,7 @@ select.removeShadow,
 
 #sidebar-v2 nav a:hover span,
 #sidebar-v2 nav a:hover i {
-  color: var(--sb-text) !important;
+  color: #ffffff !important;
   transform: translateX(2px) !important;
 }
 
@@ -439,7 +440,7 @@ select.removeShadow,
 #sidebar-v2 nav a.exact-active span,
 #sidebar-v2 nav a.active i,
 #sidebar-v2 nav a.exact-active i {
-  color: var(--sb-text) !important;
+  color: #ffffff !important;
   font-weight: 700 !important;
 }
 
@@ -578,12 +579,13 @@ select.removeShadow,
   border-bottom: 1px solid rgba(0,0,0,0.4) !important;
 }
 
+/* CORREGIDO: botones topbar fondo blanco */
 .hl_header .btn-circle,
 .hl_header .feedback-toggle-btn,
 .hl_header button.rounded-full,
 .hl_header a[role="button"] {
-  background: rgba(0,0,0,0.3) !important;
-  background-color: rgba(0,0,0,0.3) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
@@ -595,13 +597,13 @@ select.removeShadow,
 }
 
 #hl_header--help-icon {
-  background: transparent !important;
-  box-shadow: inset 0 0 0 50px rgba(0,0,0,0.3) !important;
-  border: 2px solid rgba(47, 47, 47, 0.4) !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
   border-radius: 50% !important;
   overflow: hidden !important;
   outline: none !important;
-  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease !important;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease !important;
   --tw-ring-shadow: 0 0 #0000 !important;
 }
 
@@ -621,25 +623,26 @@ select.removeShadow,
   transform: none !important;
 }
 
+/* CORREGIDO: íconos topbar en negro */
 .hl_header .btn-circle:not(#hl_header--copilot-icon) i,
 .hl_header .feedback-toggle-icon,
 .hl_header button.rounded-full svg,
 #hl_header--help-icon i {
-  fill: rgba(243, 238, 246, 0.45) !important;
-  color: rgba(243, 238, 246, 0.45) !important;
-  stroke: rgba(243, 238, 246, 0.45) !important;
+  fill: #0d0d0d !important;
+  color: #0d0d0d !important;
+  stroke: #0d0d0d !important;
   transition: color 0.25s ease, fill 0.25s ease !important;
 }
 
 .hl_header .btn-circle:not(#hl_header--copilot-icon) > svg { 
-  fill: rgba(243, 238, 246, 0.45) !important; 
-  color: rgba(243, 238, 246, 0.45) !important; 
+  fill: #0d0d0d !important; 
+  color: #0d0d0d !important; 
 }
 
 .hl_header .btn-circle:not(#hl_header--copilot-icon) svg path,
 .hl_header button.rounded-full svg path { 
-  fill: rgba(243, 238, 246, 0.45) !important; 
-  stroke: rgba(243, 238, 246, 0.45) !important; 
+  fill: #0d0d0d !important; 
+  stroke: #0d0d0d !important; 
 }
 
 #hl_header--help-icon svg circle { 
@@ -647,12 +650,17 @@ select.removeShadow,
   stroke: transparent !important; 
 }
 
+#hl_header--help-icon i {
+  color: #0d0d0d !important;
+}
+
+/* Hover botones topbar */
 .hl_header .btn-circle:not(#hl_header--copilot-icon):hover,
 .hl_header .feedback-toggle-btn:hover,
 .hl_header button.rounded-full:hover,
 .hl_header a[role="button"]:not(#hl_header--copilot-icon):hover {
-  background: var(--sb-bg-dark) !important;
-  background-color: var(--sb-bg-dark) !important;
+  background: #f0f0f0 !important;
+  background-color: #f0f0f0 !important;
   border: none !important;
   transform: translateY(-1px) !important;
 }
@@ -660,25 +668,26 @@ select.removeShadow,
 .hl_header .btn-circle:not(#hl_header--copilot-icon):hover i,
 .hl_header .feedback-toggle-btn:hover .feedback-toggle-icon,
 .hl_header button.rounded-full:hover svg {
-  fill: var(--sb-text) !important;
-  color: var(--sb-text) !important;
-  stroke: var(--sb-text) !important;
+  fill: #000000 !important;
+  color: #000000 !important;
+  stroke: #000000 !important;
 }
 
 .hl_header .btn-circle:not(#hl_header--copilot-icon):hover svg path,
 .hl_header button.rounded-full:hover svg path {
-  fill: var(--sb-text) !important;
-  stroke: var(--sb-text) !important;
+  fill: #000000 !important;
+  stroke: #000000 !important;
 }
 
 #hl_header--help-icon:hover {
-  box-shadow: inset 0 0 0 50px var(--sb-bg-dark) !important;
-  border: 2px solid rgba(47, 47, 47, 0.5) !important;
+  background: #f0f0f0 !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
   transform: translateY(-1px) !important;
 }
 
 #hl_header--help-icon:hover i { 
-  color: var(--sb-text) !important; 
+  color: #000000 !important; 
 }
 
 .hl_header .Canny_Badge,
@@ -752,7 +761,7 @@ select.removeShadow,
 
 .topmenu-navtitle,
 .topmenu-navitem span { 
-  color: rgba(243, 238, 246, 0.45) !important; 
+  color: rgba(243, 238, 246, 0.65) !important; 
   transition: color 0.2s ease !important; 
 }
 
