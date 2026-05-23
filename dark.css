@@ -361,19 +361,19 @@ select.removeShadow,
 }
 
 #backButtonv2:hover {
-  background-color: var(--sb-bg-dark) !important;
-  border-color: rgba(243, 238, 246, 0.15) !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
 }
 
 #backButtonv2 i, 
 #backButtonv2 span {
-  color: rgba(243, 238, 246, 0.85) !important;
+  color: #ffffff !important;
   transition: color 0.25s ease !important;
 }
 
 #backButtonv2:hover i, 
 #backButtonv2:hover span { 
-  color: var(--sb-text) !important; 
+  color: #000000 !important; 
 }
 
 #sidebar-v2 .menu-title {
@@ -395,16 +395,23 @@ select.removeShadow,
 }
 
 #location-switcher-sidbar-v2:hover {
-  background-color: var(--sb-bg-dark) !important;
-  border-color: rgba(243, 238, 246, 0.15) !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
 }
 
 #location-switcher-sidbar-v2 span,
 #location-switcher-sidbar-v2 i,
 #location-switcher-sidbar-v2 div { 
-  color: var(--sb-text) !important; 
+  color: #ffffff !important; 
 }
 
+#location-switcher-sidbar-v2:hover span,
+#location-switcher-sidbar-v2:hover i,
+#location-switcher-sidbar-v2:hover div {
+  color: #000000 !important;
+}
+
+/* REPOSO: letras blanco puro */
 #sidebar-v2 nav a {
   transition: background 0.2s ease, border-color 0.2s ease !important;
   border-radius: 8px !important;
@@ -412,35 +419,36 @@ select.removeShadow,
   border-left: 3px solid transparent !important;
 }
 
-/* CORREGIDO: textos sidebar en blanco visible */
 #sidebar-v2 nav a span,
 #sidebar-v2 nav a i {
-  color: rgba(243, 238, 246, 0.85) !important;
+  color: #ffffff !important;
   transition: color 0.2s ease, transform 0.2s ease !important;
 }
 
+/* HOVER: fondo blanco, letras y símbolos negros */
 #sidebar-v2 nav a:hover {
-  background-color: var(--sb-bg-dark) !important;
-  border-left-color: rgba(243, 238, 246, 0.2) !important;
+  background-color: #ffffff !important;
+  border-left-color: #ffffff !important;
 }
 
 #sidebar-v2 nav a:hover span,
 #sidebar-v2 nav a:hover i {
-  color: #ffffff !important;
+  color: #000000 !important;
   transform: translateX(2px) !important;
 }
 
+/* ACTIVO: fondo blanco, letras y símbolos negros */
 #sidebar-v2 nav a.active,
 #sidebar-v2 nav a.exact-active {
-  background-color: var(--sb-bg-darker) !important;
-  border-left: 3px solid rgba(243, 238, 246, 0.3) !important;
+  background-color: #ffffff !important;
+  border-left: 3px solid #cccccc !important;
 }
 
 #sidebar-v2 nav a.active span,
 #sidebar-v2 nav a.exact-active span,
 #sidebar-v2 nav a.active i,
 #sidebar-v2 nav a.exact-active i {
-  color: #ffffff !important;
+  color: #000000 !important;
   font-weight: 700 !important;
 }
 
@@ -579,7 +587,6 @@ select.removeShadow,
   border-bottom: 1px solid rgba(0,0,0,0.4) !important;
 }
 
-/* CORREGIDO: botones topbar fondo blanco */
 .hl_header .btn-circle,
 .hl_header .feedback-toggle-btn,
 .hl_header button.rounded-full,
@@ -623,7 +630,6 @@ select.removeShadow,
   transform: none !important;
 }
 
-/* CORREGIDO: íconos topbar en negro */
 .hl_header .btn-circle:not(#hl_header--copilot-icon) i,
 .hl_header .feedback-toggle-icon,
 .hl_header button.rounded-full svg,
@@ -654,7 +660,6 @@ select.removeShadow,
   color: #0d0d0d !important;
 }
 
-/* Hover botones topbar */
 .hl_header .btn-circle:not(#hl_header--copilot-icon):hover,
 .hl_header .feedback-toggle-btn:hover,
 .hl_header button.rounded-full:hover,
