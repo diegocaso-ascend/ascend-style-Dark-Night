@@ -411,6 +411,7 @@ select.removeShadow,
   color: #000000 !important;
 }
 
+/* REPOSO: letras blanco puro */
 #sidebar-v2 nav a {
   transition: background 0.2s ease, border-color 0.2s ease !important;
   border-radius: 8px !important;
@@ -418,14 +419,13 @@ select.removeShadow,
   border-left: 3px solid transparent !important;
 }
 
-/* REPOSO: blanco puro */
 #sidebar-v2 nav a span,
 #sidebar-v2 nav a i {
   color: #ffffff !important;
   transition: color 0.2s ease, transform 0.2s ease !important;
 }
 
-/* HOVER: fondo blanco, texto negro */
+/* HOVER: fondo blanco, letras y símbolos negros */
 #sidebar-v2 nav a:hover {
   background-color: #ffffff !important;
   border-left-color: #ffffff !important;
@@ -437,7 +437,7 @@ select.removeShadow,
   transform: translateX(2px) !important;
 }
 
-/* ACTIVO: fondo blanco, texto negro, permanente */
+/* ACTIVO: fondo blanco, letras y símbolos negros */
 #sidebar-v2 nav a.active,
 #sidebar-v2 nav a.exact-active {
   background-color: #ffffff !important;
@@ -587,7 +587,6 @@ select.removeShadow,
   border-bottom: 1px solid rgba(0,0,0,0.4) !important;
 }
 
-/* Todos los botones topbar: fondo blanco, íconos negros */
 .hl_header .btn-circle,
 .hl_header .feedback-toggle-btn,
 .hl_header button.rounded-full,
@@ -601,34 +600,27 @@ select.removeShadow,
   --tw-ring-shadow: 0 0 #0000 !important;
   --tw-ring-offset-width: 0px !important;
   --tw-ring-offset-shadow: 0 0 #0000 !important;
-  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease !important;
+  transition: background 0.25s ease, transform 0.2s ease !important;
 }
 
-/* FORZAR override de estilos inline en help-icon y copilot-icon */
-a#hl_header--help-icon.btn.btn-circle.btn-primary.hl_header--copy-link,
-a#hl_header--help-icon[style],
 #hl_header--help-icon {
   background: #ffffff !important;
-  background-color: #ffffff !important;
   box-shadow: none !important;
-  border: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
   border-radius: 50% !important;
   overflow: hidden !important;
   outline: none !important;
-  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease !important;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease !important;
   --tw-ring-shadow: 0 0 #0000 !important;
 }
 
-/* FORZAR override copilot que tiene style inline también */
-a#hl_header--copilot-icon.btn.btn-circle.btn-primary.hl_header--copy-link,
-a#hl_header--copilot-icon[style],
 #hl_header--copilot-icon {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: transparent !important;
+  background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
   outline: none !important;
   width: auto !important;
   height: auto !important;
@@ -636,33 +628,25 @@ a#hl_header--copilot-icon[style],
   --tw-ring-shadow: 0 0 #0000 !important;
   --tw-ring-offset-shadow: 0 0 #0000 !important;
   transform: none !important;
-  transition: background 0.25s ease, box-shadow 0.25s ease !important;
 }
 
-/* Íconos negros en todos los botones topbar */
-.hl_header .btn-circle i,
+.hl_header .btn-circle:not(#hl_header--copilot-icon) i,
 .hl_header .feedback-toggle-icon,
 .hl_header button.rounded-full svg,
-#hl_header--help-icon i,
-#hl_header--copilot-icon i,
-#hl_header--copilot-icon svg path {
+#hl_header--help-icon i {
   fill: #0d0d0d !important;
   color: #0d0d0d !important;
   stroke: #0d0d0d !important;
   transition: color 0.25s ease, fill 0.25s ease !important;
 }
 
-.hl_header .btn-circle > svg,
-#hl_header--help-icon > svg,
-#hl_header--copilot-icon > svg { 
+.hl_header .btn-circle:not(#hl_header--copilot-icon) > svg { 
   fill: #0d0d0d !important; 
   color: #0d0d0d !important; 
 }
 
-.hl_header .btn-circle svg path,
-.hl_header button.rounded-full svg path,
-#hl_header--help-icon svg path,
-#hl_header--copilot-icon svg path { 
+.hl_header .btn-circle:not(#hl_header--copilot-icon) svg path,
+.hl_header button.rounded-full svg path { 
   fill: #0d0d0d !important; 
   stroke: #0d0d0d !important; 
 }
@@ -672,57 +656,49 @@ a#hl_header--copilot-icon[style],
   stroke: transparent !important; 
 }
 
-/* HOVER topbar: fondo gris claro */
-.hl_header .btn-circle:hover,
+#hl_header--help-icon i {
+  color: #0d0d0d !important;
+}
+
+.hl_header .btn-circle:not(#hl_header--copilot-icon):hover,
 .hl_header .feedback-toggle-btn:hover,
 .hl_header button.rounded-full:hover,
-.hl_header a[role="button"]:hover,
-#hl_header--help-icon:hover,
-#hl_header--copilot-icon:hover {
-  background: #e8e8e8 !important;
-  background-color: #e8e8e8 !important;
+.hl_header a[role="button"]:not(#hl_header--copilot-icon):hover {
+  background: #f0f0f0 !important;
+  background-color: #f0f0f0 !important;
   border: none !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+  transform: translateY(-1px) !important;
 }
 
-.hl_header .btn-circle:hover i,
+.hl_header .btn-circle:not(#hl_header--copilot-icon):hover i,
 .hl_header .feedback-toggle-btn:hover .feedback-toggle-icon,
-.hl_header button.rounded-full:hover svg,
-#hl_header--help-icon:hover i,
-#hl_header--copilot-icon:hover svg path {
+.hl_header button.rounded-full:hover svg {
   fill: #000000 !important;
   color: #000000 !important;
   stroke: #000000 !important;
 }
 
-.hl_header .btn-circle:hover svg path,
-.hl_header button.rounded-full:hover svg path,
-#hl_header--help-icon:hover svg path {
+.hl_header .btn-circle:not(#hl_header--copilot-icon):hover svg path,
+.hl_header button.rounded-full:hover svg path {
   fill: #000000 !important;
   stroke: #000000 !important;
 }
 
-/* Dropdown del header también fondo blanco */
-.hl_header .hl_header--dropdown,
-.hl_header .dropdown,
-.hl_header--dropdown.dropdown.--no-caret {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
+#hl_header--help-icon:hover {
+  background: #f0f0f0 !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-1px) !important;
 }
 
-.hl_header .hl_header--dropdown *,
-.hl_header .dropdown * {
-  color: #000000 !important;
-  fill: #000000 !important;
+#hl_header--help-icon:hover i { 
+  color: #000000 !important; 
 }
 
 .hl_header .Canny_Badge,
 .hl_header .bg-danger,
 .hl_header .badge {
-  background-color: #e53935 !important;
+  background-color: var(--sb-red) !important;
   border: 2px solid var(--sb-bg) !important;
 }
 
@@ -915,27 +891,27 @@ svg rect[fill="#667EEA"] {
 }
 
 /* ============================================================
-   COPILOT ÓVALO — ahora igual que los demás botones
+   COPILOT ÓVALO
    ============================================================ */
 
 .hl_header #hl_header--copilot-icon,
 #hl_header--copilot-icon[style],
 .hl_header #hl_header--copilot-icon[style] {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: inset 0 0 0 4px var(--sb-bg) !important;
   border: none !important;
-  border-radius: 50% !important;
+  border-radius: 16px !important;
   overflow: hidden !important;
-  padding: 4px !important;
+  padding: 0 !important;
   width: auto !important;
   height: auto !important;
   outline: none !important;
 }
 
 .hl_header #hl_header--copilot-icon svg {
-  color: #0d0d0d !important;
-  fill: #0d0d0d !important;
+  color: transparent !important;
+  fill: transparent !important;
   filter: none !important;
   overflow: visible !important;
   display: block !important;
@@ -943,27 +919,28 @@ svg rect[fill="#667EEA"] {
 }
 
 .hl_header #hl_header--copilot-icon svg rect:first-of-type { 
-  fill: #0d0d0d !important;
+  fill: url(#paint0_linear_9387_167087) !important; 
   stroke: none !important; 
 }
 
 .hl_header #hl_header--copilot-icon svg rect:last-of-type { 
   fill: none !important; 
-  stroke: none !important;
+  stroke: rgba(47, 47, 47, 0.6) !important; 
+  stroke-opacity: 1 !important; 
 }
 
 .hl_header #hl_header--copilot-icon svg path { 
-  fill: #0d0d0d !important; 
+  fill: var(--sb-text) !important; 
   stroke: none !important; 
 }
 
 .hl_header #hl_header--copilot-icon:hover {
-  background: #e8e8e8 !important;
-  background-color: #e8e8e8 !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
   border: none !important;
-  transform: translateY(-2px) !important;
-  opacity: 1 !important;
+  transform: none !important;
+  opacity: 0.85 !important;
 }
 
 /* ============================================================
