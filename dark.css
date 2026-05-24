@@ -877,3 +877,43 @@ a.text-gray-700[role="menuitem"]:hover,
   color: #0d0d0d !important;
   background-color: transparent !important;
 }
+
+/* ============================================================
+   DROPDOWN TOPMENU — ULTRA SPECIFICITY FIX (Fondo Oscuro)
+   ============================================================ */
+
+/* Rompemos la especificidad de GHL usando su ID de Vue + Clase + Role para el fondo */
+div[data-v-f909ff34][role="menu"].bg-white,
+.topmenu-nav div[role="menu"],
+[role="menu"] {
+  background-color: #1a1a1a !important;
+  background: #1a1a1a !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+}
+
+/* Forzamos los textos de los enlaces a tu blanco luminoso */
+div[data-v-f909ff34][role="menu"] a[role="menuitem"],
+div[data-v-f909ff34][role="menu"] *,
+[role="menu"] a,
+[role="menu"] [role="menuitem"],
+[role="menu"] span {
+  color: var(--sb-text) !important;
+  background-color: transparent !important;
+}
+
+/* Efecto Hover oscuro y sutil al pasar el mouse por las opciones */
+div[data-v-f909ff34][role="menu"] a[role="menuitem"]:hover,
+[role="menu"] a:hover,
+[role="menu"] [role="menuitem"]:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+/* En caso de que arrastren iconos vectoriales dentro del menú */
+[role="menu"] svg path,
+[role="menu"] i {
+  fill: var(--sb-text) !important;
+  stroke: var(--sb-text) !important;
+}
