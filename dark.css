@@ -826,3 +826,41 @@ input[type="checkbox"] { accent-color: var(--sb-text) !important; }
 }
 #quickActions:hover { background-color: var(--sb-bg-darker) !important; }
 #quickActions img, #quickActions span { filter: brightness(0) invert(1) !important; }
+
+/* ============================================================
+   DROPDOWN TOPMENU — FIX REAL (selectores del DOM de GHL)
+   Clases Tailwind que GHL usa: bg-white, text-gray-700, role="menu"
+   ============================================================ */
+
+/* Contenedor del dropdown */
+[role="menu"].bg-white {
+  background-color: #ffffff !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+/* Items del dropdown */
+a.text-gray-700[role="menuitem"],
+[role="menuitem"].text-gray-700,
+[role="menu"] a,
+[role="menu"] [role="menuitem"] {
+  color: #0d0d0d !important;
+  background-color: transparent !important;
+}
+
+/* Hover item */
+a.text-gray-700[role="menuitem"]:hover,
+[role="menuitem"].text-gray-700:hover,
+[role="menu"] a:hover,
+[role="menu"] [role="menuitem"]:hover {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+}
+
+/* Todos los span/texto dentro del dropdown */
+[role="menu"] span,
+[role="menu"] * {
+  color: #0d0d0d !important;
+  background-color: transparent !important;
+}
