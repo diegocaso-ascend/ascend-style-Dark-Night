@@ -685,10 +685,15 @@ select.removeShadow,
 
 /* ============================================================
    SUBMENÚ DROPDOWN PESTAÑAS — FONDO BLANCO, LETRAS NEGRAS
+   FIX: override explícito de span para vencer la regla genérica
+   del topmenu que fuerza color claro en todos los spans
    ============================================================ */
 .n-dropdown-menu,
+[class*="dropdown-menu"] {
+  background-color: #ffffff !important;
+}
+
 .n-dropdown-menu *,
-[class*="dropdown-menu"],
 [class*="dropdown-menu"] * {
   background-color: #ffffff !important;
   color: #0d0d0d !important;
@@ -704,7 +709,7 @@ select.removeShadow,
 }
 .n-dropdown-option__label { color: #0d0d0d !important; }
 
-/* Submenú de pestañas del topmenu */
+/* Submenú de pestañas del topmenu — contenedor */
 .topmenu-navitem .dropdown,
 .topmenu-navitem > ul,
 .topmenu-navitem [class*="dropdown"],
@@ -716,17 +721,36 @@ select.removeShadow,
   border-radius: 10px !important;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
 }
+
+/* FIX PRINCIPAL: forzar color negro en todos los elementos dentro del dropdown,
+   incluyendo span, para vencer la regla .topmenu-navitem span con !important */
 .topmenu-navitem .dropdown *,
+.topmenu-navitem .dropdown span,
 .topmenu-navitem > ul *,
+.topmenu-navitem > ul span,
 .topmenu-navitem [class*="dropdown"] *,
+.topmenu-navitem [class*="dropdown"] span,
 .topmenu-navitem [class*="submenu"] *,
+.topmenu-navitem [class*="submenu"] span,
 [class*="nav-dropdown"] *,
-[class*="topmenu-dropdown"] * {
+[class*="nav-dropdown"] span,
+[class*="topmenu-dropdown"] *,
+[class*="topmenu-dropdown"] span {
   color: #0d0d0d !important;
   background-color: transparent !important;
 }
+
+/* Hover ítem dentro del dropdown */
 [class*="nav-dropdown"] li:hover,
-.topmenu-navitem .dropdown li:hover { background-color: #f5f5f5 !important; }
+.topmenu-navitem .dropdown li:hover,
+.topmenu-navitem [class*="dropdown"] li:hover {
+  background-color: #f5f5f5 !important;
+}
+[class*="nav-dropdown"] li:hover span,
+.topmenu-navitem .dropdown li:hover span,
+.topmenu-navitem [class*="dropdown"] li:hover span {
+  color: #0d0d0d !important;
+}
 
 /* ============================================================
    SCROLLBARS DASHBOARD
@@ -752,7 +776,7 @@ select.removeShadow,
 .n-scrollbar::-webkit-scrollbar-thumb:hover { background: #ffffff !important; }
 
 /* ============================================================
-   PESTAÑAS
+   PESTAÑAS TOPMENU
    ============================================================ */
 .topmenu-navtitle,
 .topmenu-navitem span { color: rgba(243, 238, 246, 0.65) !important; transition: color 0.2s ease !important; }
