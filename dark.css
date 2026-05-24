@@ -684,72 +684,67 @@ select.removeShadow,
 }
 
 /* ============================================================
-   SUBMENÚ DROPDOWN PESTAÑAS — FONDO BLANCO, LETRAS NEGRAS
-   FIX: override explícito de span para vencer la regla genérica
-   del topmenu que fuerza color claro en todos los spans
+   SUBMENÚ DROPDOWN PESTAÑAS — FONDO OSCURO, LETRAS BLANCAS
+   Estrategia: fondo oscuro coherente con el tema, letras blancas
+   ya definidas por las reglas globales del sidebar/topmenu
    ============================================================ */
+
+/* Naive UI dropdown */
 .n-dropdown-menu,
 [class*="dropdown-menu"] {
-  background-color: #ffffff !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7) !important;
 }
-
-.n-dropdown-menu *,
-[class*="dropdown-menu"] * {
-  background-color: #ffffff !important;
-  color: #0d0d0d !important;
-}
-
 .n-dropdown-option {
-  background-color: #ffffff !important;
-  color: #0d0d0d !important;
+  background-color: transparent !important;
+  color: var(--sb-text) !important;
 }
 .n-dropdown-option:hover {
-  background-color: #f5f5f5 !important;
-  color: #0d0d0d !important;
+  background-color: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
 }
-.n-dropdown-option__label { color: #0d0d0d !important; }
+.n-dropdown-option__label { color: var(--sb-text) !important; }
+.n-dropdown-menu * { color: var(--sb-text) !important; }
 
-/* Submenú de pestañas del topmenu — contenedor */
+/* Submenú de pestañas del topmenu — contenedor oscuro */
 .topmenu-navitem .dropdown,
 .topmenu-navitem > ul,
 .topmenu-navitem [class*="dropdown"],
 .topmenu-navitem [class*="submenu"],
 [class*="nav-dropdown"],
 [class*="topmenu-dropdown"] {
-  background-color: #ffffff !important;
-  border: 1px solid rgba(0,0,0,0.1) !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
   border-radius: 10px !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7) !important;
 }
 
-/* FIX PRINCIPAL: forzar color negro en todos los elementos dentro del dropdown,
-   incluyendo span, para vencer la regla .topmenu-navitem span con !important */
+/* Todos los hijos heredan fondo oscuro y texto blanco */
 .topmenu-navitem .dropdown *,
-.topmenu-navitem .dropdown span,
 .topmenu-navitem > ul *,
-.topmenu-navitem > ul span,
 .topmenu-navitem [class*="dropdown"] *,
-.topmenu-navitem [class*="dropdown"] span,
 .topmenu-navitem [class*="submenu"] *,
-.topmenu-navitem [class*="submenu"] span,
 [class*="nav-dropdown"] *,
-[class*="nav-dropdown"] span,
-[class*="topmenu-dropdown"] *,
-[class*="topmenu-dropdown"] span {
-  color: #0d0d0d !important;
+[class*="topmenu-dropdown"] * {
   background-color: transparent !important;
+  color: var(--sb-text) !important;
 }
 
-/* Hover ítem dentro del dropdown */
+/* Hover ítem oscuro */
 [class*="nav-dropdown"] li:hover,
 .topmenu-navitem .dropdown li:hover,
+.topmenu-navitem > ul li:hover,
 .topmenu-navitem [class*="dropdown"] li:hover {
-  background-color: #f5f5f5 !important;
+  background-color: rgba(255,255,255,0.08) !important;
+  border-radius: 6px !important;
 }
-[class*="nav-dropdown"] li:hover span,
-.topmenu-navitem .dropdown li:hover span,
-.topmenu-navitem [class*="dropdown"] li:hover span {
-  color: #0d0d0d !important;
+[class*="nav-dropdown"] li:hover *,
+.topmenu-navitem .dropdown li:hover *,
+.topmenu-navitem > ul li:hover *,
+.topmenu-navitem [class*="dropdown"] li:hover * {
+  color: #ffffff !important;
 }
 
 /* ============================================================
