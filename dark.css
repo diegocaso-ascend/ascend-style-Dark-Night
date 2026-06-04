@@ -907,8 +907,8 @@ div[data-v-f909ff34][role="menu"] *,
 div[data-v-f909ff34][role="menu"] a[role="menuitem"]:hover,
 [role="menu"] a:hover,
 [role="menu"] [role="menuitem"]:hover {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    color: var(--sb-text) !important;  /* mantiene blanco, no cambia */
 }
 
 /* En caso de que arrastren iconos vectoriales dentro del menú */
